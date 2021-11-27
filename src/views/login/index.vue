@@ -35,7 +35,11 @@
         </span>
       </el-form-item>
 
-      <el-button type="primary" style="width: 100%; margin-bottom: 30px"
+      <el-button
+        type="primary"
+        style="width: 100%; margin-bottom: 30px"
+        @click="handleLogin"
+        :loading="loading"
         >登录</el-button
       >
     </el-form>
@@ -48,10 +52,16 @@
 // import SvgIcon from '@/components/SvgIcon/index.vue'
 import { ref } from 'vue'
 import { validatePassword } from './rules'
+import { useStore } from 'vuex'
+import { useRouter } from 'vue-router'
 
 // 处理密码限时状态
 const passwordType = ref('password')
+// const loginFromRef = ref(null)
+const loading = ref(false)
 
+const store = useStore()
+const router = useRouter()
 // 数据源
 const loginForm = ref({
   username: 'super-admin',
@@ -82,6 +92,25 @@ const loginRules = ref({
     }
   ]
 })
+
+const handleLogin = () => {
+  // loginFromRef.value.validate((valid) => {
+  // if (!valid) return
+
+  loading.value = true
+  store
+    .dispatch('user/login', loginForm.value)
+    .then(() => {
+      loading.value = false
+      // TODO: 登录后操作
+      router.push('/')
+    })
+    .catch((err) => {
+      console.log(err)
+      loading.value = false
+    })
+  // })
+}
 </script>
 
 <style lang="scss" scoped>
