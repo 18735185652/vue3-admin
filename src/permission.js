@@ -15,6 +15,15 @@ router.beforeEach(async (to, from, next) => {
     if (to.path === '/login') {
       next('/')
     } else {
+      // 判断用户资料是否获取
+      // 若不存在用户信息，则需要获取用户信息
+      console.log('store.getters.hasUserInfo', !store.getters.hasUserInfo)
+      if (!store.getters.hasUserInfo) {
+        // 触发获取用户信息的 action
+        console.log('store: ', store)
+
+        await store.dispatch('user/getUserInfo')
+      }
       next()
     }
   } else {
