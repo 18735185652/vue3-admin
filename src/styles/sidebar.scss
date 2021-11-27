@@ -67,7 +67,7 @@
     }
 
     .is-active > .el-submenu__title {
-      color: $subMenuActiveText !important;
+      // color: $subMenuActiveText;
     }
 
     & .nest-menu .el-submenu > .el-submenu__title,

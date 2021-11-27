@@ -1,26 +1,22 @@
 <template>
-  <div class="sidebar-container">
-    <div class="memu-list">SideBar</div>
-    <div class="footer-button">底部折叠按钮</div>
+  <div class="sidebar">
+    <h1>学生管理系统</h1>
+    <el-scrollbar>
+      <sidebar-menu></sidebar-menu>
+    </el-scrollbar>
   </div>
 </template>
 
 <script setup>
+import SidebarMenu from './SidebarMenu'
 import {} from 'vue'
-import { useStore } from 'vuex'
-
-const store = useStore()
-console.log('store: ', store.getters.userInfo)
 </script>
 
-<style lang="scss" scoped>
-.sidebar-container {
-  .memu-list {
-    height: calc(100% - 50px);
-  }
-  .footer-button {
-    text-align: center;
-    color: #fff;
-  }
+<style lang="scss">
+.sidebar h1 {
+  color: #fff;
+  font-size: 24px;
+  text-align: center;
+  padding: 3px;
 }
 </style>
