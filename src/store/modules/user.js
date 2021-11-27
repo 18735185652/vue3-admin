@@ -1,7 +1,10 @@
 import { login, getUserInfo } from '@/api/sys'
 import md5 from 'md5'
-import { setItem, getItem, removeItem } from '@/utils/storage'
+import { setItem, getItem, removeItem, removeAllItem } from '@/utils/storage'
 import { TOKEN } from '@/constant'
+import { setTimeStamp } from '@/utils/auth'
+
+import router from '@/router'
 
 export default {
   namespaced: true,
@@ -29,6 +32,7 @@ export default {
           .then(data => {
             console.log('data: ', data)
             this.commit('user/setToken', data.token)
+            setTimeStamp()
             resolve()
           })
           .catch(err => {
@@ -41,6 +45,12 @@ export default {
       const res = await getUserInfo()
       this.commit('user/setUserInfo', res)
       return res
+    },
+    logout() {
+      this.commit('user/setToken', '')
+      this.commit('user/setUserInfo', {})
+      removeAllItem()
+      router.push('/login')
     }
   }
 
