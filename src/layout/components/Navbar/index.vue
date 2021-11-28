@@ -1,15 +1,14 @@
 <template>
   <div class="navbar">
+    <breadcrumb class="breadcrumb-container" />
     <div class="right-menu">
       <!-- 头像 -->
       <el-dropdown class="avatar-container" trigger="click">
         <div class="avatar-wrapper">
-          <el-avatar
-            shape="square"
-            :size="30"
-            :src="$store.getters.userInfo.avatar"
-          ></el-avatar>
-          <i class="el-icon-s-tools"></i>
+          <img
+            src="@/assets/avatar.jpg"
+            style="width: 25px; height: 25px; border-radius: 20%"
+          />
         </div>
         <template #dropdown>
           <el-dropdown-menu class="user-dropdown">
@@ -32,6 +31,8 @@
 <script setup>
 import {} from 'vue'
 import { useStore } from 'vuex'
+import Breadcrumb from '@/components/Breadcrumb/index.vue'
+
 const store = useStore()
 
 const logout = () => {
@@ -46,7 +47,9 @@ const logout = () => {
   position: relative;
   background: #fff;
   box-shadow: 0 1px 4px rgba(0, 21, 41, 0.08);
-
+  .breadcrumb-container {
+    float: left;
+  }
   .right-menu {
     display: flex;
     align-items: center;
