@@ -1,6 +1,9 @@
 <template>
   <div class="sidebar">
     <!-- <h1>权限管理系统</h1> -->
+    <h1 class="logo-title" v-if="$store.getters.sidebarOpened">
+      {{ $t('msg.test') }}
+    </h1>
     <el-scrollbar>
       <sidebar-menu />
     </el-scrollbar>
