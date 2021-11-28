@@ -46,6 +46,7 @@ const logout = () => {
   overflow: hidden;
   position: relative;
   background: #fff;
+  padding: 2px 20px;
   box-shadow: 0 1px 4px rgba(0, 21, 41, 0.08);
   .breadcrumb-container {
     float: left;
@@ -55,8 +56,6 @@ const logout = () => {
     align-items: center;
     float: right;
     height: 100%;
-    padding-right: 16px;
-
     ::v-deep .avatar-container {
       cursor: pointer;
       .avatar-wrapper {
