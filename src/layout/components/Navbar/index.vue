@@ -37,7 +37,6 @@ const store = useStore()
 const logout = () => {
   store.dispatch('user/logout')
 }
-console.log('store: ', store)
 </script>
 
 <style lang="scss" scoped>

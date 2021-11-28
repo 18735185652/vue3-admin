@@ -105,8 +105,7 @@ const handleLogin = () => {
       // TODO: 登录后操作
       router.push('/')
     })
-    .catch((err) => {
-      console.log(err)
+    .catch((_) => {
       loading.value = false
     })
   // })

@@ -8,7 +8,7 @@
 
   .sidebar-container {
     transition: width #{$sideBarDuration};
-    width: $sideBarWidth !important;
+    width: $sideBarWidth;
     height: 100%;
     position: fixed;
     top: 0;
@@ -67,7 +67,7 @@
     }
 
     .is-active > .el-submenu__title {
-      // color: $subMenuActiveText;
+      color: $subMenuActiveText !important;
     }
 
     & .nest-menu .el-submenu > .el-submenu__title,

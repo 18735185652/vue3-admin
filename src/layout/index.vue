@@ -1,5 +1,8 @@
 <template>
-  <div class="app-wrapper">
+  <div
+    class="app-wrapper"
+    :class="$store.getters.sidebarOpened ? 'openSidebar' : 'hideSidebar'"
+  >
     <!-- 左侧 menu -->
     <sidebar
       class="sidebar-container"
@@ -18,10 +21,14 @@
 
 <script setup>
 import {} from 'vue'
+import { useStore } from 'vuex'
 import variables from '@/styles/variables.scss'
 import Navbar from './components/Navbar/index.vue'
 import Sidebar from './components/Sidebar/index.vue'
 import AppMain from './components/AppMain/index.vue'
+
+const store = useStore()
+console.log('store: ', store)
 </script>
 
 <style lang="scss" scoped>
@@ -41,5 +48,10 @@ import AppMain from './components/AppMain/index.vue'
   right: 0;
   z-index: 9;
   width: calc(100% - #{$sideBarWidth});
+  transition: width #{$sideBarDuration};
+}
+
+.hideSidebar .fixed-header {
+  width: calc(100% - #{$hideSideBarWidth});
 }
 </style>

@@ -4,13 +4,13 @@ import layout from '@/layout'
 /**
  * 私有路由表
  */
-const privateRoutes = [
+export const privateRoutes = [
   {
     path: '/user',
     component: layout,
     redirect: '/user/manage',
     meta: {
-      title: 'user',
+      title: '用户',
       icon: 'personnel'
     },
     children: [
@@ -18,7 +18,7 @@ const privateRoutes = [
         path: '/user/manage',
         component: () => import('@/views/user-manage/index'),
         meta: {
-          title: 'userManage',
+          title: '员工管理',
           icon: 'personnel-manage'
         }
       },
@@ -26,7 +26,7 @@ const privateRoutes = [
         path: '/user/role',
         component: () => import('@/views/role-list/index'),
         meta: {
-          title: 'roleList',
+          title: '角色列表',
           icon: 'role'
         }
       },
@@ -34,7 +34,7 @@ const privateRoutes = [
         path: '/user/permission',
         component: () => import('@/views/permission-list/index'),
         meta: {
-          title: 'permissionList',
+          title: '权限列表',
           icon: 'permission'
         }
       },
@@ -61,7 +61,7 @@ const privateRoutes = [
     component: layout,
     redirect: '/article/ranking',
     meta: {
-      title: 'article',
+      title: '文章',
       icon: 'article'
     },
     children: [
@@ -69,7 +69,7 @@ const privateRoutes = [
         path: '/article/ranking',
         component: () => import('@/views/article-ranking/index'),
         meta: {
-          title: 'articleRanking',
+          title: '文章排名',
           icon: 'article-ranking'
         }
       },
@@ -84,7 +84,7 @@ const privateRoutes = [
         path: '/article/create',
         component: () => import('@/views/article-create/index'),
         meta: {
-          title: 'articleCreate',
+          title: '创建文章',
           icon: 'article-create'
         }
       },
@@ -102,11 +102,8 @@ const privateRoutes = [
 /**
  * 公开路由表
  */
-const publicRoutes = [
-  {
-    path: '/login',
-    component: () => import('@/views/login/index')
-  },
+export const publicRoutes = [
+
   {
     path: '/',
     // 注意：带有路径“/”的记录中的组件“默认”是一个不返回 Promise 的函数
@@ -118,7 +115,7 @@ const publicRoutes = [
         name: 'profile',
         component: () => import('@/views/profile/index'),
         meta: {
-          title: 'profile',
+          title: '个人中心',
           icon: 'el-icon-user'
         }
       },
@@ -133,6 +130,10 @@ const publicRoutes = [
         component: () => import('@/views/error-page/401')
       }
     ]
+  },
+  {
+    path: '/login',
+    component: () => import('@/views/login/index')
   }
 ]
 
