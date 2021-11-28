@@ -6,13 +6,13 @@ import en from './lang/en'
 const messages = {
   en: {
     msg: {
-      test: 'hello world',
+      test: 'vue-admin',
       ...en
     }
   },
   zh: {
     msg: {
-      test: '你好世界',
+      test: '权限管理系统',
       ...zh
     }
   }

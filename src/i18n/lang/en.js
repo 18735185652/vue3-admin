@@ -56,7 +56,9 @@ export default {
     guide: 'Function Guide',
     home: 'Home',
     course: 'Course homepage',
-    logout: 'Log out'
+    logout: 'Log out',
+    zh: 'Chinese',
+    en: 'English'
   },
   guide: {
     close: 'close',

@@ -56,7 +56,9 @@ export default {
     guide: '功能引导',
     home: '首页',
     course: '课程主页',
-    logout: '退出登录'
+    logout: '退出登录',
+    zh: '中文',
+    en: '英文'
   },
   guide: {
     close: '关闭',

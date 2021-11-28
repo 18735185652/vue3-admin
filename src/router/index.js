@@ -10,7 +10,7 @@ export const privateRoutes = [
     component: layout,
     redirect: '/user/manage',
     meta: {
-      title: '用户',
+      title: 'user',
       icon: 'personnel'
     },
     children: [
@@ -18,7 +18,7 @@ export const privateRoutes = [
         path: '/user/manage',
         component: () => import('@/views/user-manage/index'),
         meta: {
-          title: '员工管理',
+          title: 'userManage',
           icon: 'personnel-manage'
         }
       },
@@ -26,7 +26,7 @@ export const privateRoutes = [
         path: '/user/role',
         component: () => import('@/views/role-list/index'),
         meta: {
-          title: '角色列表',
+          title: 'roleList',
           icon: 'role'
         }
       },
@@ -34,7 +34,7 @@ export const privateRoutes = [
         path: '/user/permission',
         component: () => import('@/views/permission-list/index'),
         meta: {
-          title: '权限列表',
+          title: 'permissionList',
           icon: 'permission'
         }
       },
@@ -43,7 +43,7 @@ export const privateRoutes = [
         name: 'userInfo',
         component: () => import('@/views/user-info/index'),
         meta: {
-          title: 'userInfo'
+          title: 'articleDetail'
         }
       },
       {
@@ -61,7 +61,7 @@ export const privateRoutes = [
     component: layout,
     redirect: '/article/ranking',
     meta: {
-      title: '文章',
+      title: 'article',
       icon: 'article'
     },
     children: [
@@ -69,7 +69,7 @@ export const privateRoutes = [
         path: '/article/ranking',
         component: () => import('@/views/article-ranking/index'),
         meta: {
-          title: '文章排名',
+          title: 'articleRanking',
           icon: 'article-ranking'
         }
       },
@@ -84,7 +84,7 @@ export const privateRoutes = [
         path: '/article/create',
         component: () => import('@/views/article-create/index'),
         meta: {
-          title: '创建文章',
+          title: 'articleCreate',
           icon: 'article-create'
         }
       },
@@ -115,7 +115,7 @@ export const publicRoutes = [
         name: 'profile',
         component: () => import('@/views/profile/index'),
         meta: {
-          title: '个人中心',
+          title: 'profile',
           icon: 'el-icon-user'
         }
       },
