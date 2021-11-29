@@ -24,6 +24,7 @@ export default {
     filterRoutes(context, menus) {
       const routes = []
       // 路由权限匹配
+      // const mockMenus = ['userManage', 'roleList']
       menus.forEach(key => {
         // 权限名 与 路由的 name 匹配
         routes.push(...privateRoutes.filter(item => item.name === key))
