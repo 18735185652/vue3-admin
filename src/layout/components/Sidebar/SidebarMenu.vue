@@ -19,21 +19,20 @@
 <script setup>
 import { computed } from 'vue'
 import SidebarItem from './SidebarItem'
-import { useRoute } from 'vue-router'
+import { useRoute, useRouter } from 'vue-router'
 import { useStore } from 'vuex'
-import { generateMenus } from '@/utils/route'
-import { privateRoutes, publicRoutes } from '@/router'
-
+import { generateMenus, filterRouters } from '@/utils/route'
+// import { privateRoutes, publicRoutes } from '@/router'
 // eslint-disable-next-line no-unused-vars
 const store = useStore()
 
 const route = useRoute()
 
 // 计算路由表结构
-// const router = useRouter()
+const router = useRouter()
 const routes = computed(() => {
-  // const filterRoutes = filterRouters(router.getRoutes())
-  return generateMenus([...publicRoutes, ...privateRoutes])
+  const filterRoutes = filterRouters(router.getRoutes())
+  return generateMenus(filterRoutes)
 })
 
 // 计算高亮 menu 的方法

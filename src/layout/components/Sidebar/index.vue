@@ -33,11 +33,11 @@ const icon = computed(() => {
 .sidebar {
   display: flex;
   flex-direction: column;
-  h1 {
+  .logo-title {
     color: #fff;
-    font-size: 24px;
+    font-size: 18px;
     text-align: center;
-    padding: 3px;
+    padding: 12px;
   }
   .el-scrollbar {
     flex: 1;

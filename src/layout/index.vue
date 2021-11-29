@@ -28,7 +28,7 @@ import Sidebar from './components/Sidebar/index.vue'
 import AppMain from './components/AppMain/index.vue'
 
 const store = useStore()
-console.log('store: ', store)
+console.log('store: ', store.getters)
 </script>
 
 <style lang="scss" scoped>
