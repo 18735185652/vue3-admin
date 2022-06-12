@@ -125,7 +125,8 @@ $cursor: #fff;
 .login-container {
   min-height: 100%;
   width: 100%;
-  background-color: $bg;
+  background-image: url('../../assets/ox.jpeg');
+  background-repeat: no-repeat;
   overflow: hidden;
 
   .login-form {

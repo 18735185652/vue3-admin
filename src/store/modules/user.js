@@ -29,12 +29,12 @@ export default {
           username,
           password: md5(password)
         })
-          .then(data => {
+          .then((data) => {
             this.commit('user/setToken', data.token)
             setTimeStamp()
             resolve()
           })
-          .catch(err => {
+          .catch((err) => {
             removeItem(TOKEN)
             reject(err)
           })
@@ -53,5 +53,4 @@ export default {
       router.push('/login')
     }
   }
-
 }
