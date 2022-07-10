@@ -3,7 +3,6 @@
     class="app-wrapper"
     :class="$store.getters.sidebarOpened ? 'openSidebar' : 'hideSidebar'"
   >
-
     <!-- 左侧 menu -->
     <sidebar
       class="sidebar-container"
@@ -13,6 +12,8 @@
       <div class="fixed-header">
         <!-- 顶部的 navbar -->
         <navbar />
+        <!-- tags -->
+        <tags-view></tags-view>
       </div>
       <!-- 内容区 -->
       <app-main />
@@ -27,6 +28,7 @@ import variables from '@/styles/variables.scss'
 import Navbar from './components/Navbar/index.vue'
 import Sidebar from './components/Sidebar/index.vue'
 import AppMain from './components/AppMain/index.vue'
+import TagsView from '@/components/TagsView'
 
 const store = useStore()
 console.log('store: ', store.getters)

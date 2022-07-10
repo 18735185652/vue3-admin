@@ -2,6 +2,7 @@
   <div class="navbar">
     <breadcrumb class="breadcrumb-container" />
     <div class="right-menu">
+      <header-search class="right-menu-item hover-effect"></header-search>
       <lang-select class="right-menu-item hover-effect" />
       <!-- 头像 -->
       <el-dropdown class="avatar-container" trigger="click">
@@ -34,6 +35,7 @@ import {} from 'vue'
 import { useStore } from 'vuex'
 import Breadcrumb from '@/components/Breadcrumb/index.vue'
 import LangSelect from '@/components/LangSelect'
+import HeaderSearch from '@/components/HeaderSearch'
 
 const store = useStore()
 
