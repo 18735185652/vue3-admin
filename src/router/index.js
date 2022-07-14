@@ -1,10 +1,10 @@
 import { createRouter, createWebHistory } from 'vue-router'
 import layout from '@/layout'
-import ArticleCreaterRouter from './modules/ArticleCreate'
-import ArticleRouter from './modules/Article'
-import PermissionListRouter from './modules/PermissionList'
-import RoleListRouter from './modules/RoleList'
 import UserManageRouter from './modules/UserManage'
+import RoleListRouter from './modules/RoleList'
+import PermissionListRouter from './modules/PermissionList'
+import ArticleRouter from './modules/Article'
+import ArticleCreaterRouter from './modules/ArticleCreate'
 import store from '@/store'
 
 /**
@@ -17,21 +17,26 @@ export const privateRoutes = [
   ArticleRouter,
   ArticleCreaterRouter
 ]
+
 /**
  * 公开路由表
  */
 export const publicRoutes = [
-
+  {
+    path: '/login',
+    component: () =>
+      import(/* webpackChunkName: "login" */ '@/views/login/index')
+  },
   {
     path: '/',
-    // 注意：带有路径“/”的记录中的组件“默认”是一个不返回 Promise 的函数
     component: layout,
     redirect: '/profile',
     children: [
       {
         path: '/profile',
         name: 'profile',
-        component: () => import('@/views/profile/index'),
+        component: () =>
+          import(/* webpackChunkName: "profile" */ '@/views/profile/index'),
         meta: {
           title: 'profile',
           icon: 'el-icon-user'
@@ -40,24 +45,22 @@ export const publicRoutes = [
       {
         path: '/404',
         name: '404',
-        component: () => import('@/views/error-page/404')
+        component: () =>
+          import(/* webpackChunkName: "error-page" */ '@/views/error-page/404')
       },
       {
         path: '/401',
         name: '401',
-        component: () => import('@/views/error-page/401')
+        component: () =>
+          import(/* webpackChunkName: "error-page" */ '@/views/error-page/401')
       }
     ]
-  },
-  {
-    path: '/login',
-    component: () => import('@/views/login/index')
   }
 ]
 
 /**
-  * 初始化路由表
-  */
+ * 初始化路由表
+ */
 export function resetRouter() {
   if (
     store.getters.userInfo &&
