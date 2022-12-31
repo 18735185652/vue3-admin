@@ -22,7 +22,6 @@
 </template>
 
 <script setup>
-import {} from 'vue'
 import { useStore } from 'vuex'
 import variables from '@/styles/variables.scss'
 import Navbar from './components/Navbar/index.vue'

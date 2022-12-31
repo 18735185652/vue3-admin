@@ -13,6 +13,7 @@ export default {
      * 增加路由
      */
     setRoutes(state, newRoutes) {
+      console.log('newRoutes: ', newRoutes)
       // 永远在静态路由的基础上增加新路由
       state.routes = [...publicRoutes, ...newRoutes]
     }
@@ -34,7 +35,7 @@ export default {
         path: '/:catchAll(.*)',
         redirect: '/404'
       })
-      context.commit('setRoutes', routes)
+
       return routes
     }
   }

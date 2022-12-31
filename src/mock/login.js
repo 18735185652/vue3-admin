@@ -32,7 +32,6 @@ const profile = mock.mock('/api/sys/profile', 'get', (req, res) => {
   }
 })
 const login = mock.mock('/api/sys/login', 'post', (req, res) => {
-  console.log('req: ', req)
   return {
     success: true,
     code: 200,

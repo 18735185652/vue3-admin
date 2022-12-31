@@ -22,10 +22,8 @@ const messages = {
  * 返回当前 lang
  */
 function getLanguage() {
-  // console.log('store.getters', store.getters)
   return store && store.getters && store.getters.language
 }
-console.log('getLanguage', getLanguage())
 
 // const locale = 'en'
 const i18n = createI18n({

@@ -24,9 +24,7 @@
 <script setup>
 import {} from 'vue'
 import { useRoute } from 'vue-router'
-// import { store } from 'vuex'
 const route = useRoute()
-// console.log('$store.getters.tagsViewList', store.getters.tagsViewList)
 
 const isActive = (tag) => {
   return tag.path === route.path
